@@ -23,6 +23,6 @@
 
 # tips
 
-如果需要从某个openid开始查起，则修改 config 中的 nextopenid
+如果需要从某个openid开始查起，则修改 config 中的 nextopenid，再运行脚本
 
-脚本运行会有部分记录写入 record.log 中
+脚本运行时所有console会在控制台输出，部分重要记录写入record.log中
