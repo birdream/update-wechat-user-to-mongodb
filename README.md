@@ -9,9 +9,11 @@
 
 # warn
 
-使用查看model中UserPro模型是否正确
+使用前 查看model中 UserPro 模型是否正确
 
-更改 config.js 中的mongodb地址
+需要更改 config.js 中的mongodb地址
+
+检查 获取token服务地址是否正确
 
 config.js 未传到github
 
