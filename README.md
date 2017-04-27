@@ -15,7 +15,9 @@
 
 检查 获取token服务地址是否正确
 
-config.js 未传到github
+
+
+另，config.js 未传到github
 
 其中有 mongouri，tokenuri，nextopenid=null 3项内容
 
