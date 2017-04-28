@@ -78,7 +78,11 @@ const User = require('./model/UserPro')
 
             if (!user) {
                 console.info('-----create: ' + reqOpenids[i].openid + ' -------------')
-                User.create(WCUSERINFOS[i])
+                User.create(WCUSERINFOS[i]).then((err, user) => {
+                    if (err) {
+                        winston.error('createERROR: ' + err.message + ' openid: ' + WCUSERINFOS[i].openid)
+                    }
+                })
             } else {
                 console.info('----------updated----' + reqOpenids[i].openid)
                 let newUser = _.mergeWith(user, WCUSERINFOS, (x, y) => {
@@ -86,7 +90,11 @@ const User = require('./model/UserPro')
                         return y
                     }
                 })
-                newUser.save()
+                newUser.save().then((err, data) => {
+                    if (err) {
+                        winston.error('updateERROR: ' + err.message + ' openid: ' + WCUSERINFOS[i].openid)
+                    }
+                })
             }
 
             if (reqOpenids[i].openid === next_openid) {
